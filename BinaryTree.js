@@ -76,8 +76,8 @@
                 // Inorder (Left, Root, Right)
                 if(node!==null){
                     this.inorder(node.left);
-                    document.getElementById("display").innerHTML+= `${node.data} -->`;
-                    
+                    let h2= document.getElementById("display").innerHTML+= `${node.data} -->`;
+                 
                    //document.write(node.data+"-->");
                     this.inorder(node.right);
                 }
@@ -128,46 +128,6 @@
     }
   
 var BST = new BinarySearchTree();
-
-
-// BST.insert(15);
-// BST.insert(25);
-// BST.insert(10);
-// BST.insert(7);
-// BST.insert(22);
-// BST.insert(17);
-// BST.insert(13);
-// BST.insert(5);
-// BST.insert(9);
-// BST.insert(27);
-// var root = BST.getRootNode();
-// document.write("Inorder nodes of tree are in order of:"+"<br>")
-// BST.inorder(root);
-// document.write("<br>")
-// BST.remove(5);	
-
-// var root = BST.getRootNode();
-// document.write("Inorder nodes of tree after removing 5 are in order of:"+"<br>")
-// BST.inorder(root);
-// document.write("<br>")
-// BST.remove(7);			
-// var root = BST.getRootNode();
-// document.write("Inorder nodes of tree after removing 7 are in order of:"+"<br>")
-// BST.inorder(root);
-// document.write("<br>")
-// BST.remove(15);
-// var root = BST.getRootNode();
-// document.write("Inorder nodes of tree after removing 15 are in order of:"+"<br>")
-// BST.inorder(root);
-// document.write("<br>")
-// document.write("Inorder traversal:"+"<br>");
-// BST.inorder(root);
-// document.write("<br>")
-// document.write("Postorder traversal"+"<br>");
-// BST.postorder(root);
-// document.write("<br>");
-// document.write("Preorder traversal"+"<br>");
-// BST.preorder(root);
 
 
 
