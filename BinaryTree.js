@@ -76,14 +76,17 @@
                 // Inorder (Left, Root, Right)
                 if(node!==null){
                     this.inorder(node.left);
-                   document.write(node.data+"-->");
+                    document.getElementById("display").innerHTML+= `${node.data} -->`;
+                    
+                   //document.write(node.data+"-->");
                     this.inorder(node.right);
                 }
             }
              preorder(node){
                 // Preorder (Root, Left, Right)
                 if(node!==null){
-                    document.write(node.data+"-->");
+                    document.getElementById("display").innerHTML+= `${node.data} -->`;
+                    //document.write(node.data+"-->");
                     this.preorder(node.left);
                     this.preorder(node.right);
                 }
@@ -93,7 +96,8 @@
                 if(node!==null){ 
                     this.postorder(node.left);
                     this.postorder(node.right);
-                    document.write(node.data+"-->");
+                    document.getElementById("display").innerHTML += `${node.data} -->`;
+                    //document.write(node.data+"-->");
                 }
             }
 
@@ -126,41 +130,83 @@
 var BST = new BinarySearchTree();
 
 
-BST.insert(15);
-BST.insert(25);
-BST.insert(10);
-BST.insert(7);
-BST.insert(22);
-BST.insert(17);
-BST.insert(13);
-BST.insert(5);
-BST.insert(9);
-BST.insert(27);
-var root = BST.getRootNode();
-document.write("Inorder nodes of tree are in order of:"+"<br>")
-BST.inorder(root);
-document.write("<br>")
-BST.remove(5);	
+// BST.insert(15);
+// BST.insert(25);
+// BST.insert(10);
+// BST.insert(7);
+// BST.insert(22);
+// BST.insert(17);
+// BST.insert(13);
+// BST.insert(5);
+// BST.insert(9);
+// BST.insert(27);
+// var root = BST.getRootNode();
+// document.write("Inorder nodes of tree are in order of:"+"<br>")
+// BST.inorder(root);
+// document.write("<br>")
+// BST.remove(5);	
 
-var root = BST.getRootNode();
-document.write("Inorder nodes of tree after removing 5 are in order of:"+"<br>")
-BST.inorder(root);
-document.write("<br>")
-BST.remove(7);			
-var root = BST.getRootNode();
-document.write("Inorder nodes of tree after removing 7 are in order of:"+"<br>")
-BST.inorder(root);
-document.write("<br>")
-BST.remove(15);
-var root = BST.getRootNode();
-document.write("Inorder nodes of tree after removing 15 are in order of:"+"<br>")
-BST.inorder(root);
-document.write("<br>")
-document.write("Inorder traversal:"+"<br>");
-BST.inorder(root);
-document.write("<br>")
-document.write("Postorder traversal"+"<br>");
-BST.postorder(root);
-document.write("<br>");
-document.write("Preorder traversal"+"<br>");
-BST.preorder(root);
+// var root = BST.getRootNode();
+// document.write("Inorder nodes of tree after removing 5 are in order of:"+"<br>")
+// BST.inorder(root);
+// document.write("<br>")
+// BST.remove(7);			
+// var root = BST.getRootNode();
+// document.write("Inorder nodes of tree after removing 7 are in order of:"+"<br>")
+// BST.inorder(root);
+// document.write("<br>")
+// BST.remove(15);
+// var root = BST.getRootNode();
+// document.write("Inorder nodes of tree after removing 15 are in order of:"+"<br>")
+// BST.inorder(root);
+// document.write("<br>")
+// document.write("Inorder traversal:"+"<br>");
+// BST.inorder(root);
+// document.write("<br>")
+// document.write("Postorder traversal"+"<br>");
+// BST.postorder(root);
+// document.write("<br>");
+// document.write("Preorder traversal"+"<br>");
+// BST.preorder(root);
+
+
+
+let insert = () => {
+    let txt1 = document.getElementById("text-box").value;
+    if (txt1 == "") {
+        alert("first enter value");
+    }
+    else {
+        BST.insert(txt1);
+        txt1="";
+        alert("Node inserted");
+        console.log(BST);
+    }
+}
+
+let inorder=() =>{
+    "<br>"
+    let root= BST.getRootNode();
+    BST.inorder(root);
+}
+
+let preorder=() =>{
+    let root= BST.getRootNode();
+    BST.preorder(root);
+}
+
+let postorder=() =>{
+    let root= BST.getRootNode();
+    BST.postorder(root);
+}
+
+let remove= () =>{
+    
+    let data = prompt("Enter Data to be Removed");
+    if (data != null) {
+        BST.remove(data);
+        alert(`${data} removed from`);
+        
+    }
+}
+

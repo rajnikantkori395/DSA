@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +8,7 @@
     <title>linked list</title>
     <script src="BinaryTree.js"></script>
     <style>
-         body {
+        body {
             background-color: #c9d5ff;
         }
 
@@ -30,35 +31,32 @@
 
         #text-box {
             font-size: large;
-            height: 50px;
+            height: 42px;
             width: 200px;
         }
-        
-    
     </style>
 </head>
+
 <body>
 
     <div class="container">
-      
-        <h1>Graph Data Structure</h1>
 
-        <input type="text" id="text-box" placeholder="Enter Element" required><br><br>
-        <button class="btn" id="btn-add" onclick="add()">Add Vertex</button>
+        <h1>Binary Search Tree Data Structure</h1>
 
-      
-        <button class="btn" id="btn-remove" onclick="edge()">Add Edge</button><br>
-        <!-- //<button class="btn" id="btn-empty" onclick="front()">Add Front Node</button> -->
-        <button class="btn" id="btn-top" onclick="display()">Display List</button><br>
-        <!-- <button class="btn" id="btn-clear" onclick="del()">Delete Node</button>
-        <button class="btn" id="btn-size" onclick="trav()">Traverse</button><br><br>  -->
-
-        <h1 id="node">Traversed Node </h1><br><br>
-        <h2 id="display"> </h2> 
+        <input type="text" id="text-box" placeholder="Enter Element" required>
+        <button class="btn" id="btn-add" onclick="insert()">Insert Node</button>
+        <button class="btn" id="btn-remove" onclick="inorder()">Inorder</button>
+        <button class="btn" id="btn-empty" onclick="preorder()">Pre Order </button>
+        <button class="btn" id="btn-top" onclick="postorder()">Post Order</button>
+        <button class="btn" id="btn-clear" onclick="remove()">Remove Node</button>
+    
+        <hr>
+       <br> <h2 id="display"> </h2>
 
 
     </div>
-    
-    
+
+
 </body>
+
 </html>
