@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stack Implementation</title>
+    <script src="stacknew.js"></script>
+    <style>
+        body {
+            background-color: #c9d5ff;
+        }
+
+        .btn {
+            border: 2px solid lightblue;
+            margin: 5px 0px;
+            height: 50px;
+            width: 100px;
+            color: white;
+            background-color: rgb(0, 94, 255);
+            padding: 5px;
+        }
+
+        .container {
+            position: relative;
+            top: 100px;
+            left: 300px;
+            float: left;
+        }
+
+        #text-box {
+            font-size: large;
+            height: 50px;
+            width: 200px;
+        }
+
+        .sidebar {
+            background-color: #fff;
+            position: absolute;
+            text-align: center;
+            border: 2px solid rgb(0, 110, 255);
+            width: 200px;
+            height: 500px;
+          
+            /* right: 200px; */
+            top: 100px;
+            float: left;
+        }
+
+        p {}
+    </style>
+
+    <script>
+
+
+       // document.onload = onLoad;
+       //we will see this issue later
+
+
+        // document.addEventListener("load",function(){
+        //     console.log('Inside document onload');
+            
+        // });
+
+        //you need to call this function after the dom is loaded, untill then you cannot access any control
+        
+
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Stack Data Structure</h1>
+        <input type="text" id="text-box" placeholder="Enter Element" value="" required><br><br>
+        <button class="btn" id="btn-add" onclick="add()">Add Item</button>
+        <button class="btn" id="btn-remove" onclick="remove()">Remove Item</button><br>
+        <button class="btn" id="btn-empty" onclick="isempty()">Check Empty</button>
+        <button class="btn" id="btn-top" onclick="top1()">Top Element</button><br>
+        <button class="btn" id="btn-clear" onclick="clear()">Clear Stack</button>
+        <button class="btn" id="btn-size" onclick="size()">Size of Stack</button>
+    </div>
+    <div class="sidebar">
+        <p><h3>STACK</h3></p><br>
+        <h1 id="top-element"></h1>
+        <p id="items"></p>
+    </div>
+
+</body>
+
+</html>
