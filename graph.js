@@ -32,9 +32,6 @@ class Graph {
             
         }
     }
-
-
-
 }
 
 var g = new Graph();
@@ -46,6 +43,7 @@ let add = () => {
     else {
         g.addVertex(txt1);
         txt1="";
+        alert("vertex added");
     }
 }
 
