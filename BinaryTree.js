@@ -77,7 +77,8 @@
                 if(node!==null){
                     this.inorder(node.left);
                     let h2= document.getElementById("display").innerHTML+= `${node.data} -->`;
-                 
+                    let br=document.createElement('br');
+                    document.getElementById("display").append(br);
                    //document.write(node.data+"-->");
                     this.inorder(node.right);
                 }
