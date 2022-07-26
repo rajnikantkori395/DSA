@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>linked list</title>
+    <script src="Tree.js"></script>
+    <style>
+        body {
+            background-color: #c9d5ff;
+        }
+
+        .btn {
+            border: 2px solid lightblue;
+            margin: 5px 0px;
+            height: 50px;
+            width: 100px;
+            color: white;
+            background-color: rgb(0, 94, 255);
+            padding: 5px;
+        }
+
+        .container {
+            position: relative;
+            top: 100px;
+            left: 300px;
+            float: left;
+        }
+
+        #text-box {
+            font-size: large;
+            height: 42px;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Binary Tree Data Structure</h1>
+
+        <input type="text" id="text-box" placeholder="Enter Element" required>
+        <button class="btn" id="btn-empty" onclick="insertRoot()">Insert Root</button>
+        <button class="btn" id="btn-add" onclick="addLeft()">Add Left</button>
+        <button class="btn" id="btn-remove" onclick="addRight()">Add Right</button>
+        <button class="btn" id="btn-clear" onclick="remove()">Remove Node</button>
+        <button class="btn" id="btn-clear" onclick="traverse()">Traverse Node</button>
+
+    
+        <hr>
+       <br> <h2 id="display"> </h2>
+
+
+    </div>
+
+
+</body>
+
+</html>
