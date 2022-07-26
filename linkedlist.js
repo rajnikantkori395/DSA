@@ -55,18 +55,42 @@ class LinkedList {
     deleteData(index) {
         // delete data at particualr index of the node in linkedlist
         const leadNode = this.traverse(index - 1);
-        if(leadNode.next===this.tail){
-           leadNode.next=null;
-           this.tail=leadNode;
-           this.length--;
-         }else{
-         const deleteNode = leadNode.next;
-         const nextNode = deleteNode.next;
-         leadNode.next = nextNode;
-         this.length--;  
-         }
-        
+        if (leadNode.next === this.tail) {
+            leadNode.next = null;
+            this.tail = leadNode;
+            this.length--;
+        } else {
+            const deleteNode = leadNode.next;
+            const nextNode = deleteNode.next;
+            leadNode.next = nextNode;
+            this.length--;
+        }
+
     }
+    deleteByData(x) {
+        let currentNode = this.head;
+        if(this.head.value ==x) {
+            this.head = this.head.next;
+        } 
+        while(currentNode.next != null) {
+
+            if (currentNode.next.value == x) {
+                currentNode.next = currentNode.next.next;
+                this.length--;
+            }
+            else if (currentNode == this.tail) {
+             //   currentNode.next = null;
+                this.tail = currentNode;
+
+            } else {
+                currentNode = currentNode.next;
+            }
+
+
+        }
+    }
+
+
 
     displayLinkedList() {
         // printing the required linkedlist
@@ -85,11 +109,11 @@ class LinkedList {
 const list = new LinkedList(null);
 console.log(list.head);
 
-    // list.addDataEnd("one");
-    // list.addDataEnd("two");
-    // list.addDataEnd("three");
-    
- 
+// list.addDataEnd("one");
+// list.addDataEnd("two");
+// list.addDataEnd("three");
+
+
 
 
 let add = () => {
@@ -143,7 +167,7 @@ let del = () => {
     if (index != null) {
         list.deleteData(index - 1);
         alert(`data deleted at position ${index}`);
-        
+
     }
     console.log(list.tail);
 }
@@ -154,6 +178,14 @@ let trav = () => {
         let t = list.traverse(index - 1);
         console.log(t);
         document.getElementById("node").innerHTML = t.value;
+    }
+}
+
+let del2 = () => {
+
+    let data = prompt("enter data to be removed");
+    if (data != null) {
+        list.deleteByData(data);
     }
 }
 
