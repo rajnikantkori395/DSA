@@ -74,16 +74,19 @@ class LinkedList {
         } 
         while(currentNode.next != null) {
 
+            if(currentNode.next==this.tail){
+                currentNode.next=null;
+                this.tail = currentNode;
+            }
+
             if (currentNode.next.value == x) {
-                currentNode.next = currentNode.next.next;
+
+                   currentNode.next = currentNode.next.next;
                 this.length--;
             }
-            else if (currentNode == this.tail) {
-             //   currentNode.next = null;
-                this.tail = currentNode;
-
-            } else {
+             else {
                 currentNode = currentNode.next;
+                
             }
 
 
