@@ -10,20 +10,27 @@ class BinaryTree {
     constructor(){
         this .root=null;
     }
-    insert(value,key){
+    insert(value){
         //  it creates a new node to be inserted and calls insertNode()
         var newNode=new TreeNode(value);
         if(this.root===null)
         this.root=newNode;
        
     }
-    insertLeft(value){
+    insertLeft(value,key){
         var newNode = new TreeNode(value);
-        if(this.root.left==null){
+        var node = this.root;
+        do{
+        if(node.left==null && node.value==key){
 
-            this.root.left = newNode;
+            node.left = newNode;
 
         }
+        else{
+            node = node.left;
+            
+        }
+    }while(node.left==null)
         }
         
     }
@@ -31,5 +38,7 @@ class BinaryTree {
 
 var tree =  new BinaryTree();
 tree.insert(5);
-tree.insertLeft(6);
+tree.insertLeft(6,5);
+tree.insertLeft(9,6);
+
 console.log(tree);
