@@ -30,7 +30,7 @@ class BinaryTree {
             node = node.left;
             
         }
-    }while(node.left==null)
+    }while(node.left===null)
         }
         
     }
