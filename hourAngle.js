@@ -1,6 +1,6 @@
-let min = 11
+let min = 25
 
-let hour = 4
+let hour = 3
 
 let seconddeg = min * 5.5;
 let firstdeg = hour * 30;
