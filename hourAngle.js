@@ -1,10 +1,10 @@
-let min = 50
+let min = 11
 
-let hour = 2
+let hour = 4
 
-
+let seconddeg = min * 5.5;
 let firstdeg = hour * 30;
-let seconddeg = min * 6;
+
 
 let angle = Math.min(Math.abs(firstdeg-seconddeg),360-Math.abs(firstdeg-seconddeg))
 
