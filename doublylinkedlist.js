@@ -57,15 +57,59 @@ const DoublyLinkedList = class {
     insertNodeAtPosition(nodeData, pos) {
         const node = new DoublyLinkedListNode(nodeData)
         const prevNode = this.traverseList(pos)
-        let leadNode = prevNode.next
-        node.next = leadNode
-        leadNode.prev = node
+        let nextNode = prevNode.next
+        node.next = nextNode
+        nextNode.prev = node
         prevNode.next = node
         node.prev = prevNode
     }
+    deleteFromTail () {
+     if (this.head === null) {
+        return null
+     }
+     else {
+        if (this.head.next === null) {
+            this.head = null;
+        }
+        else {
+            this.tail.prev.next = null
+           this.tail = this.tail.prev 
+        //    console.log(this.tail.data,"tail",this.head.data,"head")
+        }
+     }
+    }
+
+    deleteFromHead() {
+      if (this.head == null){
+        // console.log('List is already empty')
+        return null
+      }
+      else{
+       if (this.head.next == null){
+        this.head = null;
+       }
+       else{
+        this.head = this.head.next
+        this.head.prev = null
+       }
+      }
+    }
 
     deleteFromPosition(pos) {
+      const prevNode = this.traverseList(pos)
+      const delNode = prevNode.next
+      prevNode.next = delNode.next
+      delNode.next.prev = prevNode
+    }
 
+    reverseList () {
+        let temp = this.head
+        while (temp!=null) {
+            // let current = temp
+            // temp.prev = temp.next
+            // temp.next.prev = temp
+            // temp = temp.next 
+        }
     }
 };
 
@@ -85,6 +129,14 @@ dlinklist.insertNodeAtTail(6)
 dlinklist.insertNodeAtHead(7)
 
 dlinklist.insertNodeAtPosition(43, 3)
+
+dlinklist.deleteFromHead()
+
+dlinklist.deleteFromTail()
+
+dlinklist.deleteFromPosition(2)
+
+dlinklist.insertNodeAtHead(0)
 
 dlinklist.printList();
 
