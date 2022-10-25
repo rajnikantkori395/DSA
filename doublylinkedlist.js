@@ -63,48 +63,48 @@ const DoublyLinkedList = class {
         prevNode.next = node
         node.prev = prevNode
     }
-    deleteFromTail () {
-     if (this.head === null) {
-        return null
-     }
-     else {
-        if (this.head.next === null) {
-            this.head = null;
+    deleteFromTail() {
+        if (this.head === null) {
+            return null
         }
         else {
-            this.tail.prev.next = null
-           this.tail = this.tail.prev 
-        //    console.log(this.tail.data,"tail",this.head.data,"head")
+            if (this.head.next === null) {
+                this.head = null;
+            }
+            else {
+                this.tail.prev.next = null
+                this.tail = this.tail.prev
+                //    console.log(this.tail.data,"tail",this.head.data,"head")
+            }
         }
-     }
     }
 
     deleteFromHead() {
-      if (this.head == null){
-        // console.log('List is already empty')
-        return null
-      }
-      else{
-       if (this.head.next == null){
-        this.head = null;
-       }
-       else{
-        this.head = this.head.next
-        this.head.prev = null
-       }
-      }
+        if (this.head == null) {
+            // console.log('List is already empty')
+            return null
+        }
+        else {
+            if (this.head.next == null) {
+                this.head = null;
+            }
+            else {
+                this.head = this.head.next
+                this.head.prev = null
+            }
+        }
     }
 
     deleteFromPosition(pos) {
-      const prevNode = this.traverseList(pos)
-      const delNode = prevNode.next
-      prevNode.next = delNode.next
-      delNode.next.prev = prevNode
+        const prevNode = this.traverseList(pos)
+        const delNode = prevNode.next
+        prevNode.next = delNode.next
+        delNode.next.prev = prevNode
     }
 
-    reverseList () {
+    reverseList() {
         let temp = this.head
-        while (temp!=null) {
+        while (temp != null) {
             // let current = temp
             // temp.prev = temp.next
             // temp.next.prev = temp
